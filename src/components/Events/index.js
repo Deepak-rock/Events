@@ -1,3 +1,9 @@
+// Write your code here
+import {Component} from 'react'
+import EventItem from '../EventItem'
+import ActiveEventRegistrationDetails from '../ActiveEventRegistrationDetails'
+import './index.css'
+
 const eventsList = [
   {
     id: 'f9bb2373-b80e-46b8-8219-f07217b9f3ce',
@@ -47,4 +53,40 @@ const eventsList = [
     registrationStatus: 'REGISTRATIONS_CLOSED',
   },
 ]
-// Write your code here
+
+class Events extends Component {
+  state = {activeEvents: 'INITIAL'}
+
+  eventRegistration = id => {
+    const getRegistrationStatus = eventsList.find(
+      eachEvent => eachEvent.id === id,
+    )
+    if (getRegistrationStatus) {
+      this.setState({activeEvents: getRegistrationStatus.registrationStatus})
+    }
+  }
+
+  render() {
+    const {activeEvents} = this.state
+    return (
+      <div className="app-container">
+        <div className="events-active-container">
+          <div className="events-container">
+            <h1 className="name">Events</h1>
+            <ul className="events-list">
+              {eventsList.map(eventsDetails => (
+                <EventItem
+                  key={eventsDetails.id}
+                  eventsDetails={eventsDetails}
+                  eventRegistration={this.eventRegistration}
+                />
+              ))}
+            </ul>
+          </div>
+          <ActiveEventRegistrationDetails eventActiveStatus={activeEvents} />
+        </div>
+      </div>
+    )
+  }
+}
+export default Events
