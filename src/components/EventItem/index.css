@@ -1,1 +1,30 @@
 /* Write your CSS here */
+.event-item {
+  width: 250px;
+  margin: 10px;
+}
+.button {
+  background-color: transparent;
+  border: none;
+  outline: 1px solid #2dd4bf;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0;
+}
+.event-image {
+  width: 240px;
+  height: 150px;
+  border-radius: 20px;
+}
+.event-name {
+  font-size: 24px;
+  font-family: 'Roboto';
+  color: #f8fafc;
+  padding: 10px 0 0 0;
+}
+.event-location {
+  font-size: 16px;
+  font-family: 'Roboto';
+  color: #f8fafc;
+  padding: 5px 0 0 0;
+}

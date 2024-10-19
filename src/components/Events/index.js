@@ -72,7 +72,7 @@ class Events extends Component {
       <div className="app-container">
         <div className="events-active-container">
           <div className="events-container">
-            <h1 className="name">Events</h1>
+            <h1 className="events">Events</h1>
             <ul className="events-list">
               {eventsList.map(eventsDetails => (
                 <EventItem
